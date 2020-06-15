@@ -122,6 +122,7 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    
   }
 
 }
@@ -135,6 +136,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  -webkit-box-shadow: -11px 9px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -11px 9px 5px 0px rgba(0,0,0,0.75);
+box-shadow: -11px 9px 5px 0px rgba(0,0,0,0.75);
 }
 
 h2 {
@@ -162,7 +166,8 @@ p {
 }
 .city{
 font-family: "Pacifico";
-color:#0E6096
+color:#0E6096;
+font-size: 370%;
 }
 
 .card-text{
