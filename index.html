@@ -13,11 +13,12 @@
   <link href="./stylesheet.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="inicio container text-center d-flex flex-column align-items-center justify-content-center">
+  <div id="tudao" class="container d-flex flex-column align-items-center justify-content-center" style="width: 100vw; height: 100vh;">
+  <div class="inicio text-center d-flex flex-column align-items-center justify-content-center">
     <img src="./assets/gif_nublado.gif" class="w-25" alt="">
     <h1 class="logo_init">Wheatherever</h1>
     <input class="text-center w-75" type="text" id="input_city" placeholder="Lisbon, PT" name=city_name>
-    <button  class="btn btn-primary  w-75" onclick="show()">Pesquisar</button>
+    <button  class="btn btn-primary  w-75" id="search_button"onclick="show()">Pesquisar</button>
   </div>
   <div class="d-none tudo  d-flex flex-column align-items-center justify-content-center  text-center">
     <img src="./assets/main.png" class="imagem_principal" alt="gif nublado" />
@@ -59,6 +60,7 @@
       &copy App criado por
       <a href="https://github.com/MarcelSSouza">Marcel Santos Souza</a>
     </p>
+  </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

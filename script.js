@@ -5,6 +5,7 @@ var nome_cidade = $("#input_city").val()
   }
   else{
     $(".inicio").addClass('d-none')
+    $("#tudao").removeAttr('style') 
 //ENVIAR A REQUISIÇÃO
 var xhr = new XMLHttpRequest();
 var bot = document.querySelector(".botao");
@@ -47,5 +48,13 @@ xhr.addEventListener("load", function () {
 function voltar(){
   $(".inicio").removeClass('d-none')
   $(".tudo").addClass('d-none')
+  $("#tudao").attr('style', 'width: 100vw; height: 100vh;');
+
   $("#input_city").val('')
 }
+
+$("#input_city").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#search_button").click();
+    }
+});
