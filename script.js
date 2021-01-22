@@ -39,3 +39,8 @@ xhr.addEventListener("load", function () {
   output7.innerHTML = respostaoutdescription;
   output8.innerHTML = respostaoutdate;
 });
+
+function show(){
+  $(".inicio").addClass('d-none')
+  $(".tudo").removeClass('d-none')
+}
