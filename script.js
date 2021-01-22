@@ -1,3 +1,10 @@
+function show(){
+var nome_cidade = $("#input_city").val()
+  if(nome_cidade.length<3){
+    alert("Digite ao menos 3 letras para que a pesquisa funcione.")
+  }
+  else{
+    $(".inicio").addClass('d-none')
 //ENVIAR A REQUISIÇÃO
 var xhr = new XMLHttpRequest();
 var bot = document.querySelector(".botao");
@@ -7,21 +14,18 @@ var output3 = document.querySelector(".wind");
 var output4 = document.querySelector(".city");
 var output5 = document.querySelector(".sunrise");
 var output6 = document.querySelector(".sunset");
-var output7 = document.querySelector(".description");
-var output8 = document.querySelector(".date");
 
 var resposta = xhr.open(
   "GET",
-  "https://api.hgbrasil.com/weather?format=json-cors&key=e9eb90f6&user_ip=remote"
-);
+  `https://api.hgbrasil.com/weather?format=json-cors&key=e9eb90f6&city_name=${nome_cidade}`
+  );
 xhr.send();
-
 //ESCUTAR A REPOSTA DA REQUISIÇÃO E POR NUM ELEMENTO DO HTML OU IMPRIMIR NO CONSOLE
-
 xhr.addEventListener("load", function () {
   //nos retorna a resposta em JSON e depois converte para objeto
   var resposta = xhr.responseText;
   var resposta1 = JSON.parse(resposta);
+  console.log(resposta1)
   var respostaout = resposta1["results"]["temp"] + "°C";
   var respostaouthumidity = resposta1["results"]["humidity"] + "%";
   var respostaoutwind = resposta1["results"]["wind_speedy"];
@@ -36,11 +40,12 @@ xhr.addEventListener("load", function () {
   output4.innerHTML = respostaoutcity;
   output5.innerHTML = respostaoutsunrise;
   output6.innerHTML = respostaoutsunset;
-  output7.innerHTML = respostaoutdescription;
-  output8.innerHTML = respostaoutdate;
 });
-
-function show(){
-  $(".inicio").addClass('d-none')
-  $(".tudo").removeClass('d-none')
+    $(".tudo").removeClass('d-none')
+  } 
+}
+function voltar(){
+  $(".inicio").removeClass('d-none')
+  $(".tudo").addClass('d-none')
+  $("#input_city").val('')
 }
