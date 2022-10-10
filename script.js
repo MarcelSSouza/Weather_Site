@@ -18,7 +18,7 @@ var output6 = document.querySelector(".sunset");
 
 var resposta = xhr.open(
   "GET",
-  `https://api.hgbrasil.com/weather?format=json-cors&key=e9eb90f6&city_name=${nome_cidade}`
+  `https://api.hgbrasil.com/weather?format=json-cors&key=7eed484c&city_name=${nome_cidade}`
   );
 xhr.send();
 //ESCUTAR A REPOSTA DA REQUISIÇÃO E POR NUM ELEMENTO DO HTML OU IMPRIMIR NO CONSOLE
